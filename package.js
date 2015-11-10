@@ -11,6 +11,7 @@ Package.onUse(function(api) {
   api.use('ecmascript');
   api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
   api.addFiles('meteor-notes-errors.js');
+  api.addFiles('meteor-notes-errors.html');
   if (api.export)
   api.export('NotesErrors');
 });

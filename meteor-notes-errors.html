@@ -1,0 +1,29 @@
+<template name="meteorNotesErrors">
+  <div class="errors">
+  {{#each errors}}
+    {{> meteorNotesError}}
+  {{/each}}
+  </div>
+</template>
+
+<template name="meteorNotesError">
+  <div class="alert alert-danger" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{message}}
+  </div>
+</template>
+
+<template name="meteorNotesNotifications">
+  <div class="errors">
+  {{#each notifications}}
+    {{> meteorNotesNotification}}
+  {{/each}}
+  </div>
+</template>
+
+<template name="meteorNotesNotification">
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{message}}
+  </div>
+</template>
