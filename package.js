@@ -10,8 +10,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   api.use('ecmascript');
   api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
+  api.use('mongo');
+  api.imply('mongo');
   api.addFiles('meteor-notes-errors.js');
-  api.addFiles('meteor-notes-errors.html');
+  api.addAssets('meteor-notes-errors.html', "client");
   if (api.export)
   api.export('NotesErrors');
 });

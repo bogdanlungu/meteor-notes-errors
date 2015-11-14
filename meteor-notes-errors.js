@@ -1,38 +1,42 @@
-Errors = {
+NotesErrors = {
   errors: new Mongo.Collection(null),
-  notfications: new Mongo.Collection(null),
+  notifications: new Mongo.Collection(null),
 
   throwError: function(message){
-    Errors.errors.insert({message: message, seen: false});
+    NotesErrors.errors.insert({message: message, seen: false});
   },
 
-  throwNotification: function(){
-    Errors.notifications.insert({message: message, seen: false});
+  throwNotification: function(message){
+    NotesErrors.notifications.insert({message: message, seen: false});
   }
 };
 
+if(Meteor.isClient){
+
 Template.meteorNotesErrors.helpers({
   errors: function() {
-    return Errors.errors.find();
+    return NotesErrors.errors.find();
   }
 });
 
 Template.meteorNotesNotifications.helpers({
   notifications: function(){
-    return Errors.notifications.find();
+    return NotesErrors.notifications.find();
   }
 });
 
 Template.meteorNotesErrors.rendered = function() {
   var error = this.data;
   Meteor.setTimeout(function () {
-    Errors.errors.remove(error._id);
+    NotesErrors.errors.remove(error._id);
   }, 3000);
 };
 
 Template.meteorNotesNotifications.rendered = function() {
   var error = this.data;
   Meteor.setTimeout(function () {
-    Errors.notifications.remove(error._id);
+    NotesErrors.notifications.remove(error._id);
   }, 3000);
 };
+
+}
