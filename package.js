@@ -12,8 +12,8 @@ Package.onUse(function(api) {
   api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
   api.use('mongo');
   api.imply('mongo');
-  api.addFiles('meteor-notes-errors.js');
   api.addAssets('meteor-notes-errors.html', "client");
+  api.addFiles('meteor-notes-errors.js');
   if (api.export)
   api.export('NotesErrors');
 });
