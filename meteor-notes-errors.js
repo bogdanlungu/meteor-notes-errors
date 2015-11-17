@@ -11,8 +11,6 @@ NotesErrors = {
   }
 };
 
-if(Meteor.isClient){
-
 Template.meteorNotesErrors.helpers({
   errors: function() {
     return NotesErrors.errors.find();
@@ -38,5 +36,3 @@ Template.meteorNotesNotifications.rendered = function() {
     NotesErrors.notifications.remove(error._id);
   }, 3000);
 };
-
-}
