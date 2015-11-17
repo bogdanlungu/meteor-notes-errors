@@ -23,14 +23,14 @@ Template.meteorNotesNotifications.helpers({
   }
 });
 
-Template.meteorNotesErrors.rendered = function() {
+Template.meteorNotesError.rendered = function() {
   var error = this.data;
   Meteor.setTimeout(function () {
     NotesErrors.errors.remove(error._id);
   }, 3000);
 };
 
-Template.meteorNotesNotifications.rendered = function() {
+Template.meteorNotesNotification.rendered = function() {
   var error = this.data;
   Meteor.setTimeout(function () {
     NotesErrors.notifications.remove(error._id);
