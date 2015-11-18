@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   api.use(['minimongo', 'mongo-livedata', 'templating'], 'client');
-  api.addFiles(['meteor-notes-errors.html', 'meteor-notes-errors.js'], 'client');
+  api.addFiles(['meteor-notes-errors.html', 'meteor-notes-errors.js', 'meteor-notes-errors.css'], 'client');
   if (api.export)
   api.export('NotesErrors');
 });
