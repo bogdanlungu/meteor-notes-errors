@@ -31,8 +31,8 @@ Template.meteorNotesError.rendered = function() {
 };
 
 Template.meteorNotesNotification.rendered = function() {
-  var error = this.data;
+  var notification = this.data;
   Meteor.setTimeout(function () {
-    NotesErrors.notifications.remove(error._id);
+    NotesErrors.notifications.remove(notification._id);
   }, 3000);
 };
